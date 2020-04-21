@@ -15,17 +15,17 @@ vector<point> DDA(point p0, point p1) {
 	int dx, dy, eps;
 	dx = p1.x - p0.x;
 	dy = p1.y - p0.y;
-	if (abs(dx) < abs(dy))//Ð±ÂÊ¾ø¶ÔÖµ´óÓÚ1£¬y·½ÏòÎª×î´óÎ»ÒÆ·½Ïò
+	if (abs(dx) < abs(dy))//æ–œçŽ‡ç»å¯¹å€¼å¤§äºŽ1ï¼Œyæ–¹å‘ä¸ºæœ€å¤§ä½ç§»æ–¹å‘
 		eps = abs(dy);
 	else
 		eps = abs(dx);
-	float xIncrease = (float)dx / eps;//Ð±ÂÊk£¬Èôx·½ÏòÎª×î´óÎ»ÒÆ·½Ïò£¬ÄÇÃ´Õâ¸öÖµ¾ÍµÈÓÚ1£¬·´Ö®Îªk
+	float xIncrease = (float)dx / eps;//æ–œçŽ‡kï¼Œè‹¥xæ–¹å‘ä¸ºæœ€å¤§ä½ç§»æ–¹å‘ï¼Œé‚£ä¹ˆè¿™ä¸ªå€¼å°±ç­‰äºŽ1ï¼Œåä¹‹ä¸ºk
 	float yIncrease = (float)dy / eps;
 	vector<point> ans;
 	float x = p0.x;
 	float y = p0.y;
 	for (int i = 0; i <= eps; i++) {
-		ans.emplace_back(point((int)(x + 0.5), (int)(y + 0.5)));//ËÄÉáÎåÈë=¡·¼Ó0.5ÔÙÏòÏÂÈ¡Õû
+		ans.emplace_back(point((int)(x + 0.5), (int)(y + 0.5)));//å››èˆäº”å…¥=ã€‹åŠ 0.5å†å‘ä¸‹å–æ•´
 		x += xIncrease;
 		y += yIncrease;
 	}
